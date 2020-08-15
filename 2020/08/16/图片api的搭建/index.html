@@ -20,22 +20,21 @@
     var CONFIG = {"hostname":"nozomi.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="ConEmu - 强大的终端模拟器所以，长话短说，这里只是一个简单的介绍。 最近在研究Windows的精简(使用的工具为NTLite)，然后尝试着把应用商店给去掉了，这就导致无法正常安装Windows Terminal和其他的UWP(Universal Windows Platform)应用。但我似乎找到了一个非常合适的的解决方案——ConEmu。">
+  <meta name="description" content="图片API的搭建 好，让我们直接开始…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="好用的终端推荐">
-<meta property="og:url" content="https://nozomi.tk/2020/08/15/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BB%88%E7%AB%AF%E6%8E%A8%E8%8D%90/index.html">
+<meta property="og:title" content="图片api的搭建">
+<meta property="og:url" content="https://nozomi.tk/2020/08/16/%E5%9B%BE%E7%89%87api%E7%9A%84%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Betelgeuse">
-<meta property="og:description" content="ConEmu - 强大的终端模拟器所以，长话短说，这里只是一个简单的介绍。 最近在研究Windows的精简(使用的工具为NTLite)，然后尝试着把应用商店给去掉了，这就导致无法正常安装Windows Terminal和其他的UWP(Universal Windows Platform)应用。但我似乎找到了一个非常合适的的解决方案——ConEmu。">
+<meta property="og:description" content="图片API的搭建 好，让我们直接开始…">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://nozomi.tk/images/ConEmu.png">
-<meta property="og:image" content="https://nozomi.tk/images/CP.png">
-<meta property="article:published_time" content="2020-08-14T21:21:44.000Z">
-<meta property="article:modified_time" content="2020-08-15T02:22:53.688Z">
+<meta property="og:image" content="http://api.nozomi.tk/api.php">
+<meta property="article:published_time" content="2020-08-15T19:47:02.000Z">
+<meta property="article:modified_time" content="2020-08-15T21:10:07.199Z">
 <meta property="article:author" content="Nozomi">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://nozomi.tk/images/ConEmu.png">
+<meta name="twitter:image" content="http://api.nozomi.tk/api.php">
 
-<link rel="canonical" href="https://nozomi.tk/2020/08/15/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BB%88%E7%AB%AF%E6%8E%A8%E8%8D%90/">
+<link rel="canonical" href="https://nozomi.tk/2020/08/16/%E5%9B%BE%E7%89%87api%E7%9A%84%E6%90%AD%E5%BB%BA/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>好用的终端推荐 | Betelgeuse</title>
+  <title>图片api的搭建 | Betelgeuse</title>
   
 
 
@@ -159,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://nozomi.tk/2020/08/15/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BB%88%E7%AB%AF%E6%8E%A8%E8%8D%90/">
+    <link itemprop="mainEntityOfPage" href="https://nozomi.tk/2020/08/16/%E5%9B%BE%E7%89%87api%E7%9A%84%E6%90%AD%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -172,7 +171,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          好用的终端推荐
+          图片api的搭建
         </h1>
 
         <div class="post-meta">
@@ -183,7 +182,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-08-15 05:21:44 / 修改时间：10:22:53" itemprop="dateCreated datePublished" datetime="2020-08-15T05:21:44+08:00">2020-08-15</time>
+              <time title="创建时间：2020-08-16 03:47:02 / 修改时间：05:10:07" itemprop="dateCreated datePublished" datetime="2020-08-16T03:47:02+08:00">2020-08-16</time>
             </span>
 
           
@@ -204,14 +203,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="ConEmu-强大的终端模拟器"><a href="#ConEmu-强大的终端模拟器" class="headerlink" title="ConEmu - 强大的终端模拟器"></a>ConEmu - 强大的终端模拟器</h1><p>所以，长话短说，这里只是一个简单的介绍。</p>
-<p>最近在研究Windows的精简(使用的工具为NTLite)，然后尝试着把应用商店给去掉了，这就导致无法正常安装Windows Terminal和其他的UWP(Universal Windows Platform)应用。但我似乎找到了一个非常合适的的解决方案——ConEmu。</p>
+        <h1 id="图片API的搭建"><a href="#图片API的搭建" class="headerlink" title="图片API的搭建"></a>图片API的搭建</h1><p><img src="http://api.nozomi.tk/api.php" alt="效果"></p>
+<p>好，让我们直接开始…</p>
 <a id="more"></a>
 
-<p><img src="/images/ConEmu.png" alt="ConEmu"></p>
-<p>如你们所见，该有的它都有了——标签页、自定义字体、字数统计、缩放、透明度，还有很多东西。同时，它还能自定义使用的Command Prompt。</p>
-<p><img src="/images/CP.png" alt="自定义界面"></p>
-<p><a target="_blank" rel="noopener" href="https://conemu.github.io/">下载地址</a></p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>这件事让我碰了很多坑，比如说外网映射和端口封闭什么的 <del>还不是你没钱租服务器</del></p>
+<p>首先，上成品。<a target="_blank" rel="noopener" href="https://api.nozomi.tk/api.php">链接</a></p>
+<p>如你所见，这是一个ACG图片的api，可以随意使用。</p>
+<p>其实搭建API并没有你想象中的那么困难 <del>前提是你有钱</del> ，那么我们先来把必需品准备一下:</p>
+<ul>
+<li>一个服务器 （推荐国外的服务器 国内服务器需要备案）</li>
+<li>一个域名 （不是必须）</li>
+<li>一大堆图片 （废话）</li>
+</ul>
+<p>差不多就这些东西了，那么来做吧! </p>
+<h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><ol>
+<li>要做好这件事，你需要有LNMP环境，但是手动配置的话会很麻烦，所以可以去使用<a target="_blank" rel="noopener" href="https://bt.cn/">宝塔运维面板</a>。当你按照宝塔的官方指南安装好之后，从外部浏览器登陆，即可选择安装的运行环境。</li>
+<li>确认你的服务器IPv4地址后，到解析服务里去解析你的服务器（直接写IP）。</li>
+</ol>
+<h2 id="网站的创建"><a href="#网站的创建" class="headerlink" title="网站的创建"></a>网站的创建</h2><p>进入控制台后，在左边的一栏中选择网站 -&gt; 添加站点，在域名那里写你服务器的IP地址或刚刚解析完成的域名，其他一切都保持原样后提交。</p>
+<p>在左边那一栏中选择文件 - &gt; 选择 www文件夹 -&gt; wwwroot文件夹 -&gt; 你刚才填写的网站名，在这个文件夹下面创建一个名为api.php的文件和一个叫做images的文件夹，把你所有图片都放在images文件夹下的另外新建的文件夹（什么名字都可以，图片必须是png,gif,jpg）。</p>
+<p>api.php里面填写以下内容：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"> <span class="comment">//这将得到一个文件夹中的所有gif，jpg和png图片的数组 </span></span><br><span class="line">$img_array = glob(<span class="string">&quot;./images/*/*.&#123;gif,jpg,png&#125;&quot;</span>,GLOB_BRACE);</span><br><span class="line"> <span class="comment">//从数组中选择一个随机图片 </span></span><br><span class="line">$img = array_rand($img_array);</span><br><span class="line"><span class="comment">//在页面显示图片 </span></span><br><span class="line">header(<span class="string">&quot;location:.$img_array[$img]&quot;</span>); </span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>保存，退出去。</p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>API搭建好了！你的API地址即为”你的域名/ip / api.php”。上面的代码是把服务端重定向至图片界面，如果想要直接显示的话还请自己到网上去找找看x</p>
+<p align=right>Nozomi 2020/8/16</p>
+
 
     </div>
 
@@ -232,13 +250,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/14/Windows%E7%BE%8E%E5%8C%96-part0/" rel="prev" title="Windows美化.part0">
-      <i class="fa fa-chevron-left"></i> Windows美化.part0
+    <a href="/2020/08/15/%E5%8F%AA%E6%9C%89%E7%A5%9E%E7%9F%A5%E9%81%93%E7%9A%84%E5%9C%B0%E6%96%B9/" rel="prev" title="只有神知道的地方">
+      <i class="fa fa-chevron-left"></i> 只有神知道的地方
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/08/15/%E5%8F%AA%E6%9C%89%E7%A5%9E%E7%9F%A5%E9%81%93%E7%9A%84%E5%9C%B0%E6%96%B9/" rel="next" title="只有神知道的地方">
-      只有神知道的地方 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -297,7 +312,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ConEmu-%E5%BC%BA%E5%A4%A7%E7%9A%84%E7%BB%88%E7%AB%AF%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">ConEmu - 强大的终端模拟器</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E7%89%87API%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">图片API的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">1.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.2.</span> <span class="nav-text">配置服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">1.3.</span> <span class="nav-text">网站的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%88%90"><span class="nav-number">1.4.</span> <span class="nav-text">完成</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
